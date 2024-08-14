@@ -1,6 +1,12 @@
+<script setup lang="ts">
+import BoardItem from '../components/BoardItem.vue'
+</script>
 <template>
   <div class="about">
-    <h3>vue3 web app</h3>
+    <BoardItem>
+      <template #icon> </template>
+      <template #heading>vue3 web app</template>
+    </BoardItem>
   </div>
 </template>
 
