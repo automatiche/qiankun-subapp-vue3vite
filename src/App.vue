@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { inject } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+
+const mainAppUrl: string = inject('mainAppUrl') as string // 调用全局变量
+console.log('mainAppUrl', mainAppUrl)
+// 跳转到外部URL的方法  
+const goToExternalUrl = () => {
+    window.location.href = mainAppUrl
+}  
 </script>
 
 <template>
@@ -8,6 +16,9 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">首页</RouterLink>
         <RouterLink to="/about">关于</RouterLink>
+        <div @click="goToExternalUrl" class="custom-router-link">  
+          返回主应用  
+        </div> 
       </nav>
     </div>
   </header>
@@ -44,6 +55,16 @@ nav a:first-of-type {
   border: 0;
 }
 
+.custom-router-link {  
+  cursor: pointer;  
+  text-decoration: underline;  
+  color: blue;
+  padding-top: 1rem;
+}  
+  
+.custom-router-link:hover {  
+  color: darkblue;
+} 
 @media (min-width: 1024px) {
   header {
     display: flex;
