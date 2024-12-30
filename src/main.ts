@@ -3,6 +3,8 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
 
 // 定义主应用地址  
 
