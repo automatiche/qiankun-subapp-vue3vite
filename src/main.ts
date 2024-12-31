@@ -22,7 +22,10 @@ const render = (container?: any, origin?: string) => {
 const initQianKun = () => {
   renderWithQiankun({
     mount(props) {
-      const { container, origin } = props
+      const { container, origin, shared } = props
+      // 获取共享数据
+      const userContext = shared.get('userContextShared')
+      console.log('上下文共享数据 userInfo：', userContext)
       render(container, origin)
     },
     bootstrap() {},
