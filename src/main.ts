@@ -11,11 +11,12 @@ import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helpe
 let app: any
 
 const render = (container?: any, origin?: string) => {
+  console.log('origin', origin)
   app = createApp(App)
   app.provide('mainAppUrl', origin)
   app
     .use(router)
-    .mount(container ? container.querySelector('#app') : '#app')
+    .mount(container ? container.querySelector('.sub-container') : '.sub-container')
 }
 
 const initQianKun = () => {
